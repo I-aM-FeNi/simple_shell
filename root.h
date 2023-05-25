@@ -38,19 +38,21 @@ extern char **environ;
 
 
 /**
-*@str: String
-*@next: points to new node
-*struct liststr - singly linked list
-*@num: Sum field
+ * struct liststr - singly connected list
+* @str: String
+* @next: points to new node
+* @num: Sum field
 */
 typedef struct liststr
 {
-        int num;
-        char *str;
-        struct liststr *next;
+int num;
+char *str;
+struct liststr *next;
 } list_t;
 
 /**
+* struct passinfo - Having pseudo-arguements to pass into a function,
+* allowing uniform prototype for function pointer struct
 *@argc: Argument count
 * @line_count: problem count
 * @err_num: problem code for exit()s
@@ -66,48 +68,46 @@ typedef struct liststr
 * @env: Connected list local copy of environ
 * @environ: Editable modified copy of environ from LL env
 * @history: Detailed node
-* struct passinfo - Having pseudo-arguements to pass into a function,
-* allowing uniform prototype for function pointer struct
 * @arg: a string generated from getline containing arguements
 * @readfd: the fd from which to read line input
 * @histcount: the history line number count
 */
 typedef struct passinfo
 {
-        char *arg;
-        char **argv;
-        char *path;
-        int argc;
-        unsigned int line_count;
-        int err_num;
-        int linecount_flag;
-        char *fname;
-        list_t *env;
-        list_t *history;
-        list_t *alias;
-        char **environ;
-        int env_changed;
-        int status;
+char *arg;
+char **argv;
+char *path;
+int argc;
+unsigned int line_count;
+int err_num;
+int linecount_flag;
+char *fname;
+list_t *env;
+list_t *history;
+list_t *alias;
+char **environ;
+int env_changed;
+int status;
 
-        char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
-        int cmd_buf_type; /* CMD_type ||, &&, ; */
-        int readfd;
-        int histcount;
+char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
+int cmd_buf_type; /* CMD_type ||, &&, ; */
+int readfd;
+int histcount;
 } info_t;
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-            0, 0, 0}
+0, 0, 0}
 
 /**
- * struct builtin - contains a builtin string and related function
- * @type: the builtin command flag
- * @func: the function
- */
+* struct builtin - contains a builtin string and related function
+* @type: the builtin command flag
+* @func: the function
+*/
 typedef struct builtin
 {
-        char *type;
-        int (*func)(info_t *);
+char *type;
+int (*func)(info_t *);
 } builtin_table;
 
 

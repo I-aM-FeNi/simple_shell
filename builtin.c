@@ -1,9 +1,9 @@
 #include "root.h"
 
 /**
-* @info: shape holding potential arguments. Used to preserve
+ * _myexit: leaves the shell
+ * @info: shape holding potential arguments. Used to preserve
 * Continual function prototype.
-* _myexit – leaves the shell
 * Return: exits with  given exit status
 * (0) if info.argv[0] != "exit"
 */
@@ -30,9 +30,9 @@ return (-2);
 }
 
 /**
+ * _mycd: Swaps present directory of process
 * @info: Shape holding potential arguments. Used to maintain
 * Continual function prototype.
-* _mycd - Swaps present directory of process
 * Return: Always 0
 */
 int _mycd(info_t *info)
@@ -80,9 +80,9 @@ return (0);
 }
 
 /**
+ * _myhelp: Swaps present directory of process
 * @info: Shape holding potential arguments. Used to preserve
 * continual function prototype.
-* _myhelp – Swaps present directory of process
 * Return: Always 0
 */
 int _myhelp(info_t *info)

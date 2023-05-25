@@ -1,7 +1,8 @@
 #include "root.h"
 
 /**
-* srtow – Divides string into words. Repeats delimiter is ignored
+* strtow – Splits string to words.
+* Repeats delimiter is ignored
 * @d: Delimiter string
 * @str: Input string
 * Return: Points to array of strings, or NULL on failure
@@ -22,7 +23,7 @@ numwords++;
 
 if (numwords == 0)
 return (NULL);
-s = malloc((1 + numwords) * sizeof(char *));
+s = malloc((1 + numwords) *sizeof(char *));
 if (!s)
 return (NULL);
 for (i = 0, j = 0; j < numwords; j++)
@@ -49,7 +50,7 @@ return (s);
 }
 
 /**
-* **strtow2 – Divides string into words
+ * strtow2 – Splits string to words
 * @str: Input string
 * @d: Delimiter
 * Return: Points to an array of strings, or NULL on failure
@@ -68,7 +69,7 @@ if ((str[i] != d && str[i + 1] == d) ||
 numwords++;
 if (numwords == 0)
 return (NULL);
-s = malloc((1 + numwords) * sizeof(char *));
+s = malloc((1 + numwords) *sizeof(char *));
 if (!s)
 return (NULL);
 for (i = 0, j = 0; j < numwords; j++)
