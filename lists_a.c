@@ -73,11 +73,13 @@ return (i);
 * node_starts_with - Restores node
 * @node: Points to first (1st) node
 * @prefix: A string to tie
+* @next_char: Next Character
 * @c: Character after Prefix that’s matches
 * Return: Ties node or null
 */
 
 list_t *node_starts_with(list_t *node, char *prefix, char next_char)
+
 {
 if (node == NULL || prefix == NULL)
 return (NULL);

@@ -40,7 +40,7 @@ return (0);
 }
 
 /**
-* _atoi – Change  string to integer
+* _atoi – Change string to an integer
 * @s: the string to be Changed
 * Return: 0 if no Sum in string, CHanged SUm O/W
 */
